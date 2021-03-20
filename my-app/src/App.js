@@ -2,14 +2,25 @@ import { Route,Switch } from 'react-router';
 import Home from './components/Home'
 import SetTimer from './components/Timer/SetTimer'
 import NavBar from './components/NavBar'
+import signIn from './components/SignIn'
+import signUp from './components/SignUp'
+import { BrowserRouter } from 'react-router-dom';
+import {AuthProvider}  from "./components/Auth";
+import PrivateRoute from "./components/PrivateRoute";
 
 const App = () =>(
   <>
     <NavBar/>
-    <Switch>
-      <Route exact path='/' component={Home} />
-      <Route exact path='/set-timer' component={SetTimer} />
-    </Switch>
+    <AuthProvider>
+      <BrowserRouter>
+        <Switch>
+          <PrivateRoute exact path='/' component={Home} />
+          <Route exact path='/signIn' component={signIn} />
+          <Route exact path='/signUp' component={signUp} />
+          <Route exact path='/set-timer' component={SetTimer} />
+        </Switch>
+      </BrowserRouter>
+    </AuthProvider>
   </>
 )
 
