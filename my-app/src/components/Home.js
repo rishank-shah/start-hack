@@ -1,5 +1,4 @@
 import React from 'react';
-// import app from './Auth/firebase'
 import firebase from 'firebase'
 require('firebase/auth')
 
