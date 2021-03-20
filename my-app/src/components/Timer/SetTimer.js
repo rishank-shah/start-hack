@@ -7,11 +7,12 @@ class Timer extends React.Component{
         super(props)
         this.state = {
             hours:0,
-            minutes:0,
+            minutes:1,
             seconds:0,
             timerStarted:false,
             timerStopped:true,
-            lap:[]
+            lap:[],
+            timeMinutes:0
         }
     }
 
@@ -74,6 +75,34 @@ class Timer extends React.Component{
         }))
     }
 
+    handleChange=(e)=>{
+        this.setState({
+            timeMinutes:parseInt(e.target.value) || 0,
+            minutes:parseInt(e.target.value) || 0,
+            seconds:60
+        })
+        console.log(parseInt(e.target.value) || 0)
+        if(this.state.timerStopped){
+            this.timerInterval = setInterval(()=>{
+                this.setState({
+                    timerStarted:true,
+                    timerStopped:false,
+                });
+                if(this.state.timerStarted){
+                    if(this.state.seconds <= 0 ){
+                        this.setState((prevState)=>({
+                            minutes: prevState.minutes - 1,
+                            seconds:60
+                        }))
+                    }
+                    this.setState((prevState)=>({
+                        seconds: prevState.seconds - 1
+                    }))
+                }
+            },1000)
+        }
+    }
+
     render(){
         return (
             <div>
@@ -103,13 +132,16 @@ class Timer extends React.Component{
                             <div class="rounded bg-gradient-4 text-white shadow p-5 text-center mb-5">
                                 <p class="mb-0 font-weight-bold text-uppercase">LET'S USE SOME CALL TO ACTION</p>
                                 <div id="clock-c" class="countdown py-4"></div>
+                            <div className="text-center">
+                                <input onChange={e => this.handleChange(e)} placeholder="Set Timer for x minutes"/>
+                            </div>
                             <div className="mt-5 mb-5 text-center timer text-bold">
                                 {this.state.hours + ":" + this.state.minutes + ":" + this.state.seconds}
                             </div>
                             <div className="text-center container">
-                                <button onClick={this.startTimer.bind(this)} className="btn btn-success">Start Timer</button>
+                                <button disabled={this.state.timerStarted} onClick={this.handleChange.bind(this)} className="btn btn-success">Start Timer</button>
                                 <button onClick={this.stopTimer.bind(this)} className="btn btn-warning ml-5">Stop Timer</button>
-                                <button onClick={this.saveTime.bind(this)} className="btn btn-primary ml-5">Save Time</button>
+                                <button disabled={!this.state.timerStarted} onClick={this.saveTime.bind(this)} className="btn btn-primary ml-5">Save Time</button>
                                 <button onClick={this.resetTimer.bind(this)} className="btn btn-danger ml-5">Reset Timer</button>
                             </div>
                             <div className="container text-center mt-5">

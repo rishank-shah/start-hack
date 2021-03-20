@@ -29,8 +29,6 @@ const App = () =>(
         </Switch>
       </BrowserRouter>
     </AuthProvider>
-      
-      
   </>
 )
 

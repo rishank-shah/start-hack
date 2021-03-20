@@ -1,15 +1,10 @@
 import React from 'react';
-import 'bootstrap/dist/css/bootstrap.min.css';
 import { Card, Button } from 'react-bootstrap';
 import cal from './calendar.png';
 import event from './event.svg';
 
 function calendar() {
-
   var gapi = window.gapi
-  /* 
-    Update with your own Client Id and Api key 
-  */
   var CLIENT_ID = "566914486352-t33kd750n1g2mu5ut45b6948fg7v8c66.apps.googleusercontent.com"
   var API_KEY = "AIzaSyDWePF5Qs6Q0FDyzYVGF-WYsMclP7eMyCE"
   var DISCOVERY_DOCS = ["https://www.googleapis.com/discovery/v1/apis/calendar/v3/rest"]
@@ -68,27 +63,6 @@ function calendar() {
           console.log(event)
           window.open(event.htmlLink)
         })
-        
-
-        /*
-            Uncomment the following block to get events
-        */
-        /*
-        // get events
-        gapi.client.calendar.events.list({
-          'calendarId': 'primary',
-          'timeMin': (new Date()).toISOString(),
-          'showDeleted': false,
-          'singleEvents': true,
-          'maxResults': 10,
-          'orderBy': 'startTime'
-        }).then(response => {
-          const events = response.result.items
-          console.log('EVENTS: ', events)
-        })
-        */
-    
-
       })
     })
   }
@@ -104,9 +78,7 @@ function calendar() {
         <Button variant="primary" onClick={handleClick} style={{ textAlign: 'center', marginLeft: '9rem'}} >Add Event</Button>
       </Card.Body>
   </Card>
-
   )
-  
 }
 
 export default calendar;
