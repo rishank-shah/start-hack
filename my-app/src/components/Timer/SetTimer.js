@@ -1,4 +1,5 @@
 import React from 'react';
+import './SetTimer.css'
 
 class Timer extends React.Component{
 
@@ -76,24 +77,51 @@ class Timer extends React.Component{
     render(){
         return (
             <div>
-                <div className="jumbotron">
-                    <h2>Timer</h2>
+                <div class="py-5">
+                    <div class="row">
+                        <div class="col-lg-8 mx-auto">
+
+                            
+                            <div class="rounded bg-gradient-1 text-white shadow p-5 text-center mb-5">
+                                <p class="mb-4 font-weight-bold text-uppercase">PLAN YOUR DAY ACCORDINGLY</p>
+                                <div id="clock-b" class="countdown-circles d-flex flex-wrap justify-content-center pt-4"></div>
+                            </div>
+
+                            
+                            <div class="rounded bg-gradient-2 text-white shadow p-5 text-center mb-5">
+                                <p class="mb-0 font-weight-bold text-uppercase">TAKE A BREAK</p>
+                                <div id="clock-a" class="countdown pt-4"></div>
+                            </div>
+
+                            
+                            <div class="rounded bg-gradient-3 text-white shadow p-5 text-center mb-5">
+                                <p class="mb-0 font-weight-bold text-uppercase">WE'RE HERE TO HELP YOU OUT</p>
+                                <div id="clock" class="countdown pt-4"></div>
+                            </div>
+
+                            
+                            <div class="rounded bg-gradient-4 text-white shadow p-5 text-center mb-5">
+                                <p class="mb-0 font-weight-bold text-uppercase">LET'S USE SOME CALL TO ACTION</p>
+                                <div id="clock-c" class="countdown py-4"></div>
+                            <div className="mt-5 mb-5 text-center timer text-bold">
+                                {this.state.hours + ":" + this.state.minutes + ":" + this.state.seconds}
+                            </div>
+                            <div className="text-center container">
+                                <button onClick={this.startTimer.bind(this)} className="btn btn-success">Start Timer</button>
+                                <button onClick={this.stopTimer.bind(this)} className="btn btn-warning ml-5">Stop Timer</button>
+                                <button onClick={this.saveTime.bind(this)} className="btn btn-primary ml-5">Save Time</button>
+                                <button onClick={this.resetTimer.bind(this)} className="btn btn-danger ml-5">Reset Timer</button>
+                            </div>
+                            <div className="container text-center mt-5">
+                                {this.state.lap.map((time,index)=>{
+                                    return <div key={index}>Captured Time - {index + 1}  : {time}</div>
+                                })}
+                            </div>
+                        </div>
+                        </div>
+                    </div>
                 </div>
-                <div className="mt-5 mb-5 text-center timer text-bold">
-                    {this.state.hours + ":" + this.state.minutes + ":" + this.state.seconds}
                 </div>
-                <div className="text-center container">
-                    <button onClick={this.startTimer.bind(this)} className="btn btn-success">Start Timer</button>
-                    <button onClick={this.stopTimer.bind(this)} className="btn btn-warning ml-5">Stop Timer</button>
-                    <button onClick={this.saveTime.bind(this)} className="btn btn-primary ml-5">Save Time</button>
-                    <button onClick={this.resetTimer.bind(this)} className="btn btn-danger ml-5">Reset Timer</button>
-                </div>
-                <div className="container text-center mt-5">
-                    {this.state.lap.map((time,index)=>{
-                        return <div key={index}>Captured Time - {index + 1}  : {time}</div>
-                    })}
-                </div>
-            </div>
         )
     }
 };

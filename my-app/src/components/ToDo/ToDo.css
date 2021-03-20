@@ -1,0 +1,121 @@
+body {
+    height: 100vh;
+    /* background: radial-gradient(#eee, #aaa); */
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+  }
+  
+  form {
+    display: inline;
+    border-radius: 25px;
+  }
+  
+  button {
+    margin: 3px;
+    cursor: pointer;
+  }
+  
+  .to-do-app {
+    box-sizing: border-box;
+    width: 550px;
+    margin: 50px auto 0 auto;
+    text-align: center;
+    border-radius: 5px;
+    /* box-shadow: 0 0 5px #252525; */
+  }
+  
+  .header {
+    background: #1c1427;
+    padding: 7px;
+    border-radius: 25px;
+    border: none;
+  }
+  .header h1 {
+    font-size: 36px;
+    margin: 0;
+    color: white;
+    font-weight: lighter;
+  }
+  
+  .create-new {
+    /* border-top: 1px solid #777; */
+    width: 100%;
+    
+  }
+  .create-new input {
+    box-sizing: border-box;
+    width: 75%;
+    padding: 10px;
+    font-size: 18px;
+    outline: black;
+    border: none;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    text-align: center;
+    background: #ded7b1;
+    border-radius: 25px;
+  }
+  .create-new button {
+    width: 25%;
+    background: #a7c5eb;
+    box-sizing: border-box;
+    padding: 10px;
+    font-size: 18px;
+    margin: 2px;
+    margin-bottom: 10px;
+    border: none;
+    border-radius: 25px;
+    border-left: 1px solid #999;
+  }
+  .create-new button:hover {
+    background: #949cdf;
+  }
+  
+  .items-list {
+    background: #ccffbd;
+    border-radius: 25px;
+    margin-top: 20px;
+    
+  }
+  
+  
+  .to-do-item {
+    padding: 10px 0 10px 0;
+    margin: 1px 0 1px 0;
+    /* border-top: 1px solid #08363b; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 18px;
+    color: black;
+    font-weight: lighter;
+    user-select: none;
+  }
+  .to-do-item:hover{
+    background: #7eca9c;
+  }
+  .name {
+    margin-left: 10px;
+  }
+  .name input {
+    width: 350px;
+    color: #333;
+    padding: 5px;
+    border: none;
+    border-radius: 1px;
+  }
+  
+  .actions {
+    margin-right: 10px;
+  }
+  .actions button {
+    padding: 7px;
+    border-radius: 2px;
+    border: none;
+    outline: none;
+    background: #40394a;
+    color: white;
+    font-weight: lighter;
+    border-radius: 25px;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
