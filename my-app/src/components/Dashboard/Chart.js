@@ -7,7 +7,7 @@ import Title from './Title';
 function createData(time, amount) {
   return { time, amount };
 }
-
+let point3 = 200;
 const data = [
   createData('00:00', 0),
   createData('03:00', 300),
@@ -17,7 +17,7 @@ const data = [
   createData('15:00', 2000),
   createData('18:00', 2400),
   createData('21:00', 2400),
-  createData('24:00', undefined),
+  createData('24:00', point3),
 ];
 
 export default function Chart() {
@@ -25,7 +25,7 @@ export default function Chart() {
 
   return (
     <React.Fragment>
-      <Title>Today</Title>
+      <Title>Time required for various tasks </Title>
       <ResponsiveContainer>
         <LineChart
           data={data}
@@ -37,13 +37,14 @@ export default function Chart() {
           }}
         >
           <XAxis dataKey="time" stroke={theme.palette.text.secondary} />
+          
           <YAxis stroke={theme.palette.text.secondary}>
             <Label
               angle={270}
               position="left"
               style={{ textAnchor: 'middle', fill: theme.palette.text.primary }}
             >
-              Sales ($)
+             Tasks
             </Label>
           </YAxis>
           <Line type="monotone" dataKey="amount" stroke={theme.palette.primary.main} dot={false} />

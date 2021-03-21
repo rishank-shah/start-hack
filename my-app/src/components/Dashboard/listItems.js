@@ -4,45 +4,59 @@ import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import ListSubheader from '@material-ui/core/ListSubheader';
 import DashboardIcon from '@material-ui/icons/Dashboard';
-import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
-import PeopleIcon from '@material-ui/icons/People';
-import BarChartIcon from '@material-ui/icons/BarChart';
-import LayersIcon from '@material-ui/icons/Layers';
 import AssignmentIcon from '@material-ui/icons/Assignment';
+import FormatListNumberedIcon from '@material-ui/icons/FormatListNumbered';
+import ChatIcon from '@material-ui/icons/Chat';
+import TimerIcon from '@material-ui/icons/Timer';
+import EventIcon from '@material-ui/icons/Event';
+import FitnessCenterIcon from '@material-ui/icons/FitnessCenter';
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
 export const mainListItems = (
+  
   <div>
     <ListItem button>
       <ListItemIcon>
         <DashboardIcon />
       </ListItemIcon>
-      <ListItemText primary="Dashboard" />
+      <Link to="/"><ListItemText primary="Dashboard" /></Link>
     </ListItem>
     <ListItem button>
       <ListItemIcon>
-        <ShoppingCartIcon />
+        <FormatListNumberedIcon />
+       
       </ListItemIcon>
-      <ListItemText primary="Orders" />
+      <Link to="/todo"><ListItemText primary="ToDo's" /></Link>
     </ListItem>
     <ListItem button>
       <ListItemIcon>
-        <PeopleIcon />
+        <ChatIcon />
       </ListItemIcon>
-      <ListItemText primary="Customers" />
+      <Link to="/chat"><ListItemText primary="Chat" /></Link>
     </ListItem>
     <ListItem button>
       <ListItemIcon>
-        <BarChartIcon />
+        <FitnessCenterIcon />
       </ListItemIcon>
-      <ListItemText primary="Reports" />
+      <Link to="/exercise"><ListItemText primary="Personal Health" /></Link>
     </ListItem>
     <ListItem button>
       <ListItemIcon>
-        <LayersIcon />
+        <TimerIcon />
       </ListItemIcon>
-      <ListItemText primary="Integrations" />
+      <Link to="/set-timer"><ListItemText primary="Timer" /></Link>
+    </ListItem>
+    <ListItem button>
+      <ListItemIcon>
+        <EventIcon />
+      </ListItemIcon>
+      <Link to="/calendar"><ListItemText primary="Calendar" /></Link>
     </ListItem>
   </div>
+
+
+  
+
 );
 
 export const secondaryListItems = (

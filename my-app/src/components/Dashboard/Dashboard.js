@@ -187,6 +187,7 @@ export default function Dashboard() {
     firebase.auth().signOut();
   }
     return (
+      
     <div className={classes.root}>
       <CssBaseline />
       <AppBar position="absolute" className={clsx(classes.appBar, open && classes.appBarShift)}>
@@ -248,7 +249,7 @@ export default function Dashboard() {
             <InboxIcon fontSize="small" />
           </ListItemIcon>
           <button onClick={()=> firebase.auth().signOut()}>Logout</button>
-          <ListItemText primary=""  />
+          <ListItemText primary="L"  />
         </StyledMenuItem>
       </StyledMenu>
     </div>
