@@ -5,7 +5,7 @@ import NavBar from './components/NavBar'
 import Chat from './components/Chat/Chat'
 import signIn from './components/Auth/SignIn'
 import signUp from './components/Auth/SignUp'
-import { BrowserRouter, Link } from 'react-router-dom';
+import { BrowserRouter } from 'react-router-dom';
 import {AuthProvider}  from "./components/Auth/Auth";
 import ToDo from './components/ToDo/ToDo'
 import Calendar from './components/Calendar/calendar';
