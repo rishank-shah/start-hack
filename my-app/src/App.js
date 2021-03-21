@@ -9,6 +9,7 @@ import { BrowserRouter } from 'react-router-dom';
 import {AuthProvider}  from "./components/Auth/Auth";
 import ToDo from './components/ToDo/ToDo'
 import Calendar from './components/Calendar/calendar';
+import Exercise from './components/Exercise/exercise';
 import PrivateRoute from "./components/Auth/PrivateRoute";
 import Dashboard from "./components/Dashboard/Dashboard";
 import Footer from './components/Footer/Footer';
@@ -34,6 +35,7 @@ const App = () =>(
           <Route exact path='/todo' component={ToDo} />
           <Route exact path='/calendar' component={Calendar} />
           <Route exact path='/chat' component={Chat} />
+          <Route exact path='/exercise' component={Exercise} />
   
         </Switch>
       </BrowserRouter>
