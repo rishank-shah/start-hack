@@ -24,9 +24,9 @@ body {
   }
   
   .header {
-    background: #1c1427;
+    background: #4a47a3;
     padding: 7px;
-    border-radius: 25px;
+    border-radius: 15px;
     border: none;
   }
   .header h1 {
@@ -52,7 +52,7 @@ body {
     margin-bottom: 5px;
     text-align: center;
     background: #ded7b1;
-    border-radius: 25px;
+    border-radius: 15px;
   }
   .create-new button {
     width: 25%;
@@ -71,8 +71,8 @@ body {
   }
   
   .items-list {
-    background: #ccffbd;
-    border-radius: 25px;
+    background: #6ddccf;
+    border-radius: 15px;
     margin-top: 20px;
     
   }
@@ -91,7 +91,7 @@ body {
     user-select: none;
   }
   .to-do-item:hover{
-    background: #7eca9c;
+    background: #ccf2f4;
   }
   .name {
     margin-left: 10px;

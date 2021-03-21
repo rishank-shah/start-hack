@@ -67,7 +67,7 @@ function calendar() {
   }
 
   return( 
-    <Card style={{ width: '28rem', backgroundColor: 'lightblue', height: '25rem', display: 'flex', marginTop: '5rem', marginLeft: '2rem', borderRadius: '25px', justifyContent: 'center', alignItems: 'center' }}>
+    <Card style={{ width: '28rem', backgroundColor: 'lightblue', height: '25rem', display: 'flex', marginTop: '5rem', marginLeft: '35%', borderRadius: '25px', justifyContent: 'center', alignItems: 'center' }}>
       <Card.Img variant="top" src={cal} style={{ width: '10rem', height: '10rem',marginTop: '2rem', borderRadius: '25px'}}/>
       <Card.Body>
         <Card.Title>Be Oriented</Card.Title>
