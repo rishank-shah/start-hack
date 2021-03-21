@@ -22,7 +22,6 @@ const App = () =>(
   
     <NavBar/>
 
-    <Dashboard/>
     <AuthProvider>
       <BrowserRouter>
         <Switch>
