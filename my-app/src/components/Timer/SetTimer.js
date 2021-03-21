@@ -12,7 +12,8 @@ class Timer extends React.Component{
             timerStarted:false,
             timerStopped:true,
             lap:[],
-            timeMinutes:0
+            timeMinutes:0,
+            playing:false
         }
     }
 
@@ -89,18 +90,40 @@ class Timer extends React.Component{
                     timerStopped:false,
                 });
                 if(this.state.timerStarted){
-                    if(this.state.seconds <= 0 ){
+                    if(this.state.seconds ===0 && this.state.minutes === 0 && this.state.hours === 0){
+                        this.audio = new Audio('https://chat-engine-assets.s3.amazonaws.com/click.mp3')
+                        this.audio.play()
+                        this.setState({
+                            playing:true
+                        })
+                    }
+                    if(this.state.seconds <= 0 &this.state.minutes < 0 ){
                         this.setState((prevState)=>({
                             minutes: prevState.minutes - 1,
                             seconds:60
                         }))
                     }
-                    this.setState((prevState)=>({
-                        seconds: prevState.seconds - 1
-                    }))
+                    if(this.state.minutes < 0){
+                        this.setState({
+                            timerStarted:false,
+                            timerStopped:true,
+                        })
+                        clearInterval(this.timerInterval)
+                    }
+                    if(this.state.seconds > 0){
+                        this.setState((prevState)=>({
+                            seconds: prevState.seconds - 1
+                        }))
+                    }
                 }
             },1000)
         }
+    }
+
+    handleStop(){
+        this.audio.pause()
+        this.setState({playing:false})
+        clearInterval(this.timerInterval)
     }
 
     render(){
@@ -143,6 +166,7 @@ class Timer extends React.Component{
                                 <button onClick={this.stopTimer.bind(this)} className="btn btn-warning ml-5">Stop Timer</button>
                                 <button disabled={!this.state.timerStarted} onClick={this.saveTime.bind(this)} className="btn btn-primary ml-5">Save Time</button>
                                 <button onClick={this.resetTimer.bind(this)} className="btn btn-danger ml-5">Reset Timer</button>
+                                {this.state.playing ? <button className="btn btn-primary ml-5" onClick={()=>this.handleStop()}>Stop Audio</button>:''}
                             </div>
                             <div className="container text-center mt-5">
                                 {this.state.lap.map((time,index)=>{
