@@ -41,7 +41,7 @@ const App = () =>(
       </BrowserRouter>
     </AuthProvider>
     <br />
-    <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+    <br /><br /><br /><br /><br /><br />
     <Footer/>
   </>
 );

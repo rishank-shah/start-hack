@@ -1,5 +1,12 @@
 import React from 'react';
 import '../../css/home-style.css';
+import DraftsIcon from '@material-ui/icons/Drafts';
+import FacebookIcon from '@material-ui/icons/Facebook';
+import TwitterIcon from '@material-ui/icons/Twitter';
+import InstagramIcon from '@material-ui/icons/Instagram';
+import RoomIcon from '@material-ui/icons/Room';
+import PhoneIcon from '@material-ui/icons/Phone';
+import EmailIcon from '@material-ui/icons/Email';
 function Footer(){
 
 
@@ -12,52 +19,58 @@ function Footer(){
 
           <div className="footer-items">
               <h1>HARDhack</h1>
-              <p>We are a team of designers and devlopers that create high quality webpages for Mirror</p>
+              <p>A all in one WFH application to look after your all requirements</p>
               <div data-aos="flip-right" className="social">
-                  <a href="#"><i className="fa fa-facebook"></i></a>
-                  <a href="#"><i className="fa fa-twitter"></i></a>
-                  <a href="#"><i className="fa fa-instagram"></i></a>
+                  <a href="#"><FacebookIcon/>   </a>
+
+
+                  <a href="#">   <TwitterIcon/></a>
+                  <a href="#"><InstagramIcon /></a>
               </div>
           </div>
 
           <div className="footer-items">
-              <h2>MENU</h2>
+              <h2>Services</h2>
               <div className="border1"></div>
                   <ul>
-                      <a href="#">Shop</a>
-                      <a href="#">About</a>
-                      <a href="#">Blogs</a>
-                      <a href="#">Features</a>
+                      <a href="/todo">ToDo's</a>
+                      <a href="chat">Chat</a>
+                      <a href="/erercise">Personal Health</a>
+                      <a href="/set-timer">Timer</a>
+                      <a href="/calendar">Calendar</a>
                   </ul>
             </div>
 
              <div className="footer-items">
-              <h2>HELP</h2>
+              <h2>About</h2>
               <div className="border1"></div>
                   <ul>
-                      <a href="#">Shipping Information</a>
-                      <a href="#">Returns &amp; Exchange</a>
-                      <a href="#">Terms &amp; Conditions</a>
-                      <a href="#">Privacy Policy</a>
+                      <a href="#">Our Vision</a>
+                      <a href="#">Aims &amp; Goals</a>
+                      <a href="#"> About Us</a>
+                      <a href="#">Our Team</a>
                   </ul>
             </div>
 
              <div className="footer-items">
               <h2>CONTACT</h2>
+              <hr/>
               <div className="border1"></div>
                   <ul>
-                    <li><i className="fa fa-map-marker"></i>60-90 Road 11378 New York</li>
+                    <li><RoomIcon/>   60-90 Road 11378 New York</li>
+                    <hr/>
                     
-                    <li><i className="fa fa-phone"></i><a href="">+65 11 88 888</a></li>
+                    <li><PhoneIcon/>  +65 11 88 888</li>
+                    <hr/>
+                    <li><a href=""><EmailIcon/>  mirror@gmail.com</a></li>
                     
-                    <li><i className="fa fa-envelope"></i><a href="">mirror@gmail.com</a></li>
                   </ul>
             </div>
 
       </div>
       <hr className="hr" />
       <div className="footer-bottom">
-          Copyright ©2020 All rights reserved | This website is made with Mirror
+          Copyright ©2020 All rights reserved | HARDhack
       </div>
   </div>
  
