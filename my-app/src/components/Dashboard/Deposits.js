@@ -1,10 +1,11 @@
 
 import React from 'react';
-import Link from '@material-ui/core/Link';
+// import Link1 from '@material-ui/core/Link';
 import { makeStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
 import Title from './Title';
-
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import taskLeft from './../ToDo/ToDo'
 function preventDefault(event) {
   event.preventDefault();
 }
@@ -19,16 +20,16 @@ export default function Deposits() {
   const classes = useStyles();
   return (
     <React.Fragment>
-      <Title>Recent Deposits</Title>
+      <Title>Tasks Left to do !!</Title>
       <Typography component="p" variant="h4">
-        $3,024.00
+        8
       </Typography>
       <Typography color="textSecondary" className={classes.depositContext}>
-        on 15 March, 2019
+        on 15 March, 2021
       </Typography>
       <div>
-        <Link color="primary" href="#" onClick={preventDefault}>
-          View balance
+        <Link to="/todo">
+          View Todo's
         </Link>
       </div>
     </React.Fragment>

@@ -14,11 +14,11 @@ function createData(id, date, name, shipTo, paymentMethod, amount) {
 }
 
 const rows = [
-  createData(0, '16 Mar, 2019', 'Elvis Presley', 'Tupelo, MS', 'VISA ⠀•••• 3719', 312.44),
-  createData(1, '16 Mar, 2019', 'Paul McCartney', 'London, UK', 'VISA ⠀•••• 2574', 866.99),
-  createData(2, '16 Mar, 2019', 'Tom Scholz', 'Boston, MA', 'MC ⠀•••• 1253', 100.81),
-  createData(3, '16 Mar, 2019', 'Michael Jackson', 'Gary, IN', 'AMEX ⠀•••• 2000', 654.39),
-  createData(4, '15 Mar, 2019', 'Bruce Springsteen', 'Long Branch, NJ', 'VISA ⠀•••• 5919', 212.79),
+  createData(0, '17 Mar, 2021', 'Beginn planning', 'Done', 'VISA ⠀•••• 3719', 312.44),
+  createData(1, '18 Mar, 2021', 'Stay updated with StartHack', 'Done', 'VISA ⠀•••• 2574', 866.99),
+  createData(2, '19 Mar, 2021', 'Start Coding', 'Done', 'MC ⠀•••• 1253', 100.81),
+  createData(3, '20 Mar, 2021', 'Develop Solution', 'Almost Done', 'AMEX ⠀•••• 2000', 654.39),
+  createData(4, '21 Mar, 2021', 'Win StartHack Hackathon', 'Pending', 'VISA ⠀•••• 5919', 212.79),
 ];
 
 function preventDefault(event) {
@@ -40,10 +40,10 @@ export default function Orders() {
         <TableHead>
           <TableRow>
             <TableCell>Date</TableCell>
-            <TableCell>Name</TableCell>
-            <TableCell>Ship To</TableCell>
-            <TableCell>Payment Method</TableCell>
-            <TableCell align="right">Sale Amount</TableCell>
+            <TableCell>Task</TableCell>
+            <TableCell>Status</TableCell>
+            {/* <TableCell>Payment Method</TableCell> */}
+            {/* <TableCell align="right">Status</TableCell> */}
           </TableRow>
         </TableHead>
         <TableBody>
@@ -52,15 +52,15 @@ export default function Orders() {
               <TableCell>{row.date}</TableCell>
               <TableCell>{row.name}</TableCell>
               <TableCell>{row.shipTo}</TableCell>
-              <TableCell>{row.paymentMethod}</TableCell>
-              <TableCell align="right">{row.amount}</TableCell>
+              {/* <TableCell>{row.paymentMethod}</TableCell> */}
+              {/* <TableCell align="right">{row.amount}</TableCell> */}
             </TableRow>
           ))}
         </TableBody>
       </Table>
       <div className={classes.seeMore}>
         <Link color="primary" href="#" onClick={preventDefault}>
-          See more orders
+          See more tasks
         </Link>
       </div>
     </React.Fragment>

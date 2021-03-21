@@ -15,14 +15,14 @@ import Dashboard from "./components/Dashboard/Dashboard";
 import Footer from './components/Footer/Footer';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './css/sidebar.css'
-
+import { mainListItems, secondaryListItems } from './components/Dashboard/listItems';
 // import SideBar from './components/listitems'
 const App = () =>(
   
   <>
   
     <NavBar/>
-
+   
     <AuthProvider>
       <BrowserRouter>
         <Switch>
