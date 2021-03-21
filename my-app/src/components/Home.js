@@ -8,13 +8,13 @@ const Home = () =>(
     <>
     <Dashboard/>
 
-    <div>
+    {/* <div>
         <div className="jumbotron">
             <h2>Home</h2>
             <p className="lead">Welcome to Home page</p>
              <button onClick={()=> firebase.auth().signOut()}>Sign Out</button>
         </div>
-    </div>
+    </div> */}
     </>
 );
 
